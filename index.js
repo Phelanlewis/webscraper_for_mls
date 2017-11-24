@@ -3,6 +3,10 @@ var cheerio = require('cheerio');
 
 request('http://www.torontoneighbourhoods.net/suburbs/durham/pickering?real-estate', function(error, response, html){
   if (!error && response.statusCode === 200){
-    console.log(html)
+    var $ = cheerio.load(html);
+    $('div.price').each(function(i, element){
+      var data = $(this);
+      console.log(data.text())
+    })
   }
 })
