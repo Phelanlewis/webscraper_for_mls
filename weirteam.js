@@ -2,7 +2,7 @@ var fs          = require('fs');
 var request     = require('request');
 var cheerio     = require('cheerio');
 
-var URL = 'http://www.toronto-homes.net/Pickering-Toronto-Homes-For-Sale-MLS-Listings/page/1/'
+var URL = 'http://www.toronto-homes.net/Leslieville-Toronto-Homes-For-Sale-MLS-Listings/page/2/'
 
 function scrapePage(URL) {
   request(URL, function(error, response, html){
@@ -60,6 +60,10 @@ function scrapePage(URL) {
 
     var finalData = cleaningData(detailsArray, priceArray, locationArray)
 
+    // priceArrayToString    = priceArray.toString();
+    // locationArrayToString = locationArray.toString();
+    // detailsArrayToString  = detailsArray.toString();
+
     // var finalData         = priceArrayToString + "\n" + locationArrayToString + "\n" + detailsArrayToString
 
     //example version of all the html beong added
@@ -69,7 +73,7 @@ function scrapePage(URL) {
 
     //adding the $price var to an html file
 
-    fs.writeFile(__dirname + "/toronto-homes-pickering .txt", finalData, function(error){
+    fs.writeFile(__dirname + "/toronto-homes-page-2.txt", finalData, function(error){
       console.log('added the prices.html is added to directory')
     })
 
