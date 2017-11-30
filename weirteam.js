@@ -73,7 +73,7 @@ function scrapePage(URL) {
 
     //adding the $price var to an html file
 
-    fs.writeFile(__dirname + "/toronto-homes-page-2.txt", finalData, function(error){
+    fs.writeFile(__dirname + "/weirteam-pickering.txt", finalData, function(error){
       console.log('added the prices.html is added to directory')
     })
 
